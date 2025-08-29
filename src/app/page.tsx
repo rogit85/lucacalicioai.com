@@ -393,11 +393,11 @@ export default function Home() {
 
       <footer className="mt-20 border-t-2 border-gray-200 bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-12 flex flex-wrap gap-4 items-center justify-between">
-          <div className="text-gray-600 font-medium">© {new Date().getFullYear()} Edge Ahead Media Limited</div>
+          <div className="text-gray-600 font-medium">© {new Date().getFullYear()} Luca Calcio AI - Edge Ahead Media Limited</div>
           <div className="flex gap-4">
-            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-white font-medium transition-all" href="/terms" target="_blank">Terms & Conditions</a>
-            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-white font-medium transition-all" href="/privacy" target="_blank">Privacy Policy</a>
-            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-white font-medium transition-all" href="/cookies" target="_blank">Cookie Policy</a>
+            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-white font-medium transition-all" href="/terms">Terms & Conditions</a>
+            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-white font-medium transition-all" href="/privacy">Privacy Policy</a>
+            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-white font-medium transition-all" href="/cookies">Cookie Policy</a>
           </div>
         </div>
       </footer>
