@@ -1,103 +1,150 @@
+"use client";
 import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
+
+type Hero = { id: string; title: string; subtitle: string; brand: string; href: string; color: string };
+type Site = {
+  id: string;
+  name: string;
+  logo_url: string;
+  tagline: string;
+  cta_label: string;
+  cta_url: string;
+  score: number;
+  features: string[];
+  tcs: string;
+};
+
+const FILTERS = [
+  "All",
+  "Acca Offers",
+  "Bet £10 Get £40",
+  "Daily Offer Boosts",
+  "Live Streaming",
+  "Online Casino",
+  "PayPal",
+  "New Bookmaker",
+  "Bet £10 Get £30",
+];
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [hero, setHero] = useState<Hero[]>([]);
+  const [sites, setSites] = useState<Site[]>([]);
+  const [activeFilter, setActiveFilter] = useState("All");
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    fetch("/api/hero").then((r) => r.json()).then(setHero);
+  }, []);
+
+  useEffect(() => {
+    const url = new URL(window.location.origin + "/api/sites");
+    if (activeFilter && activeFilter !== "All") url.searchParams.set("filter", activeFilter);
+    fetch(url.toString()).then((r) => r.json()).then(setSites);
+  }, [activeFilter]);
+
+  const sortedSites = useMemo(() => sites, [sites]);
+
+  return (
+    <main className="min-h-screen bg-neutral-950 text-white">
+      <section className="mx-auto max-w-6xl px-4 py-10">
+        <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">Best Football Betting Sites UK 2025</h1>
+        <p className="mt-3 text-neutral-300 max-w-3xl">
+          Football betting sites, such as Bet365 and William Hill, offer punters competitive odds and numerous betting markets. These platforms provide users real-time statistics, including win probabilities and player performance metrics. Many bettors appreciate features like live streaming and cash-out options, which enhance the overall betting experience. Below are the top Football Betting Sites in UK:
+        </p>
+        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+          {hero.map((h) => (
+            <motion.a
+              key={h.id}
+              href={h.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all bg-gradient-to-br from-neutral-900 to-neutral-800 border border-neutral-800"
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-lg font-bold">{h.title}</div>
+                  <div className="text-sm text-neutral-300">{h.subtitle}</div>
+                </div>
+                <div className="size-8 rounded-md" style={{ backgroundColor: h.color }} />
+              </div>
+            </motion.a>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4">
+        <div className="flex flex-wrap gap-2">
+          {FILTERS.map((f) => (
+            <button
+              key={f}
+              onClick={() => setActiveFilter(f)}
+              className={`px-3 py-1.5 rounded-full border ${
+                activeFilter === f ? "bg-white text-black" : "border-neutral-800 hover:bg-neutral-900"
+              }`}
+            >
+              {f}
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-6 space-y-4">
+          {sortedSites.map((s) => (
+            <motion.div
+              key={s.id}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="rounded-xl border border-neutral-800 bg-neutral-900 p-4"
+            >
+              <div className="flex flex-col md:flex-row md:items-center gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="size-12 rounded-md bg-neutral-800 flex items-center justify-center">
+                    <Image src={s.logo_url} alt={`${s.name} Logo`} width={40} height={40} />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-lg">{s.name}</div>
+                    <div className="text-sm text-neutral-300">{s.tagline}</div>
+                  </div>
+                </div>
+                <div className="md:ml-auto flex items-center gap-3">
+                  <div className="text-sm text-neutral-300">Our Score</div>
+                  <div className="text-xl font-bold">{s.score}</div>
+                </div>
+                <a
+                  href={s.cta_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="md:ml-4 inline-flex items-center justify-center rounded-md bg-white text-black px-4 py-2 font-semibold hover:bg-neutral-200"
+                >
+                  {s.cta_label}
+                </a>
+              </div>
+              {s.features?.length ? (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {s.features.map((f) => (
+                    <span key={f} className="text-xs px-2 py-1 rounded-full bg-neutral-800 border border-neutral-700">
+                      {f}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
+              <p className="mt-3 text-xs text-neutral-400 leading-snug">{s.tcs}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <footer className="mt-16 border-t border-neutral-800">
+        <div className="mx-auto max-w-6xl px-4 py-8 flex flex-wrap gap-3 items-center justify-between">
+          <div className="text-sm text-neutral-400">© {new Date().getFullYear()} Edge Ahead Media Limited</div>
+          <div className="flex gap-3">
+            <a className="px-3 py-1.5 rounded-md border border-neutral-800 hover:bg-neutral-900" href="/terms" target="_blank">Terms & Conditions</a>
+            <a className="px-3 py-1.5 rounded-md border border-neutral-800 hover:bg-neutral-900" href="/privacy" target="_blank">Privacy Policy</a>
+            <a className="px-3 py-1.5 rounded-md border border-neutral-800 hover:bg-neutral-900" href="/cookies" target="_blank">Cookie Policy</a>
+          </div>
+        </div>
       </footer>
-    </div>
+    </main>
   );
 }
