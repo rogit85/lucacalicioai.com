@@ -1,6 +1,6 @@
 export default function TermsPage() {
   return (
-    <main className="mx-auto max-w-4xl px-4 py-10 prose prose-invert">
+    <main className="mx-auto max-w-4xl px-4 py-10 prose prose-gray max-w-none">
       <h1>Terms and Conditions</h1>
       <p>
         This page is adapted from the US Bonus Betting terms. Mentions of Verified Digital Limited (VDL)

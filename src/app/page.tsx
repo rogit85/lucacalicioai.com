@@ -46,42 +46,139 @@ export default function Home() {
   const sortedSites = useMemo(() => sites, [sites]);
 
   return (
-    <main className="min-h-screen bg-neutral-950 text-white">
-      <section className="mx-auto max-w-6xl px-4 py-10">
-        <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">Best Football Betting Sites UK 2025</h1>
-        <p className="mt-3 text-neutral-300 max-w-3xl">
+    <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
+      {/* Animated Football Background Elements */}
+      <div className="fixed inset-0 pointer-events-none opacity-20">
+        <motion.div
+          className="absolute w-16 h-16 bg-green-500 rounded-full blur-sm"
+          animate={{
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+            rotate: [0, 360],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{ top: "10%", left: "10%" }}
+        />
+        <motion.div
+          className="absolute w-12 h-12 bg-orange-400 rounded-full blur-sm"
+          animate={{
+            x: [0, -80, 0],
+            y: [0, 60, 0],
+            rotate: [0, -360],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+          style={{ top: "30%", right: "15%" }}
+        />
+        <motion.div
+          className="absolute w-20 h-20 bg-blue-400 rounded-full blur-sm"
+          animate={{
+            x: [0, 120, 0],
+            y: [0, -80, 0],
+            rotate: [0, 180],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+          style={{ bottom: "20%", left: "20%" }}
+        />
+        <motion.div
+          className="absolute w-14 h-14 bg-red-400 rounded-full blur-sm"
+          animate={{
+            x: [0, -90, 0],
+            y: [0, 70, 0],
+            rotate: [0, -180],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3,
+          }}
+          style={{ bottom: "40%", right: "25%" }}
+        />
+      </div>
+
+      <section className="relative mx-auto max-w-6xl px-4 py-16">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-center mb-6">
+          Best Football Betting Sites UK 2025
+        </h1>
+        <p className="text-center text-gray-600 max-w-4xl mx-auto text-lg mb-12 leading-relaxed">
           Football betting sites, such as Bet365 and William Hill, offer punters competitive odds and numerous betting markets. These platforms provide users real-time statistics, including win probabilities and player performance metrics. Many bettors appreciate features like live streaming and cash-out options, which enhance the overall betting experience. Below are the top Football Betting Sites in UK:
         </p>
-        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
-          {hero.map((h) => (
+        
+        {/* Prominent Hero Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          {hero.map((h, index) => (
             <motion.a
               key={h.id}
               href={h.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all bg-gradient-to-br from-neutral-900 to-neutral-800 border border-neutral-800"
-              whileHover={{ scale: 1.02 }}
+              className="relative rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 hover:border-gray-300 min-h-[200px] group overflow-hidden"
+              whileHover={{ scale: 1.05, y: -5 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
             >
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-lg font-bold">{h.title}</div>
-                  <div className="text-sm text-neutral-300">{h.subtitle}</div>
+              {/* Gradient overlay */}
+              <div 
+                className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-300"
+                style={{ background: `linear-gradient(135deg, ${h.color}20, ${h.color}05)` }}
+              />
+              
+              <div className="relative z-10 flex flex-col justify-between h-full">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <div className="text-2xl font-bold text-gray-900 mb-2">{h.title}</div>
+                    <div className="text-lg text-gray-600 font-medium">{h.subtitle}</div>
+                  </div>
+                  <div 
+                    className="w-16 h-16 rounded-xl shadow-lg flex-shrink-0"
+                    style={{ backgroundColor: h.color }}
+                  />
                 </div>
-                <div className="size-8 rounded-md" style={{ backgroundColor: h.color }} />
+                
+                <div className="flex items-center justify-between">
+                  <div className="text-sm text-gray-500 font-medium">
+                    Click to Claim Offer
+                  </div>
+                  <motion.div
+                    className="bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold shadow-lg"
+                    whileHover={{ backgroundColor: h.color }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    Claim Now →
+                  </motion.div>
+                </div>
               </div>
             </motion.a>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4">
-        <div className="flex flex-wrap gap-2">
+      <section className="relative mx-auto max-w-6xl px-4 pb-16">
+        <h2 className="text-2xl font-bold text-center mb-8">Filter by Offers & Features</h2>
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {FILTERS.map((f) => (
             <button
               key={f}
               onClick={() => setActiveFilter(f)}
-              className={`px-3 py-1.5 rounded-full border ${
-                activeFilter === f ? "bg-white text-black" : "border-neutral-800 hover:bg-neutral-900"
+              className={`px-4 py-2 rounded-full border-2 font-medium transition-all duration-200 ${
+                activeFilter === f 
+                  ? "bg-gray-900 text-white border-gray-900 shadow-lg" 
+                  : "border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50"
               }`}
             >
               {f}
@@ -89,59 +186,69 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-6 space-y-4">
-          {sortedSites.map((s) => (
+        <div className="space-y-6">
+          {sortedSites.map((s, index) => (
             <motion.div
               key={s.id}
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="rounded-xl border border-neutral-800 bg-neutral-900 p-4"
+              transition={{ delay: index * 0.1 }}
+              className="rounded-2xl border-2 border-gray-200 bg-white p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-300"
             >
-              <div className="flex flex-col md:flex-row md:items-center gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="size-12 rounded-md bg-neutral-800 flex items-center justify-center">
-                    <Image src={s.logo_url} alt={`${s.name} Logo`} width={40} height={40} />
+              <div className="flex flex-col lg:flex-row lg:items-center gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-xl bg-gray-100 flex items-center justify-center shadow-md">
+                    <Image src={s.logo_url} alt={`${s.name} Logo`} width={48} height={48} />
                   </div>
                   <div>
-                    <div className="font-semibold text-lg">{s.name}</div>
-                    <div className="text-sm text-neutral-300">{s.tagline}</div>
+                    <div className="font-bold text-xl text-gray-900">{s.name}</div>
+                    <div className="text-gray-600 font-medium">{s.tagline}</div>
                   </div>
                 </div>
-                <div className="md:ml-auto flex items-center gap-3">
-                  <div className="text-sm text-neutral-300">Our Score</div>
-                  <div className="text-xl font-bold">{s.score}</div>
+                
+                <div className="lg:ml-auto flex items-center gap-6">
+                  <div className="text-center">
+                    <div className="text-sm text-gray-500 font-medium">Our Score</div>
+                    <div className="text-2xl font-bold text-gray-900">{s.score}</div>
+                  </div>
+                  <motion.a
+                    href={s.cta_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-gray-900 to-gray-700 text-white px-8 py-4 font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-200"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {s.cta_label} →
+                  </motion.a>
                 </div>
-                <a
-                  href={s.cta_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="md:ml-4 inline-flex items-center justify-center rounded-md bg-white text-black px-4 py-2 font-semibold hover:bg-neutral-200"
-                >
-                  {s.cta_label}
-                </a>
               </div>
+              
               {s.features?.length ? (
-                <div className="mt-3 flex flex-wrap gap-2">
+                <div className="mt-4 flex flex-wrap gap-2">
                   {s.features.map((f) => (
-                    <span key={f} className="text-xs px-2 py-1 rounded-full bg-neutral-800 border border-neutral-700">
-                      {f}
+                    <span key={f} className="text-sm px-3 py-1 rounded-full bg-green-100 text-green-800 border border-green-200 font-medium">
+                      ✓ {f}
                     </span>
                   ))}
                 </div>
               ) : null}
-              <p className="mt-3 text-xs text-neutral-400 leading-snug">{s.tcs}</p>
+              
+              <p className="mt-4 text-sm text-gray-500 leading-relaxed bg-gray-50 p-3 rounded-lg">
+                {s.tcs}
+              </p>
             </motion.div>
           ))}
         </div>
       </section>
 
-      <footer className="mt-16 border-t border-neutral-800">
-        <div className="mx-auto max-w-6xl px-4 py-8 flex flex-wrap gap-3 items-center justify-between">
-          <div className="text-sm text-neutral-400">© {new Date().getFullYear()} Edge Ahead Media Limited</div>
-          <div className="flex gap-3">
-            <a className="px-3 py-1.5 rounded-md border border-neutral-800 hover:bg-neutral-900" href="/terms" target="_blank">Terms & Conditions</a>
-            <a className="px-3 py-1.5 rounded-md border border-neutral-800 hover:bg-neutral-900" href="/privacy" target="_blank">Privacy Policy</a>
-            <a className="px-3 py-1.5 rounded-md border border-neutral-800 hover:bg-neutral-900" href="/cookies" target="_blank">Cookie Policy</a>
+      <footer className="mt-20 border-t-2 border-gray-200 bg-gray-50">
+        <div className="mx-auto max-w-6xl px-4 py-12 flex flex-wrap gap-4 items-center justify-between">
+          <div className="text-gray-600 font-medium">© {new Date().getFullYear()} Edge Ahead Media Limited</div>
+          <div className="flex gap-4">
+            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-white font-medium transition-all" href="/terms" target="_blank">Terms & Conditions</a>
+            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-white font-medium transition-all" href="/privacy" target="_blank">Privacy Policy</a>
+            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-white font-medium transition-all" href="/cookies" target="_blank">Cookie Policy</a>
           </div>
         </div>
       </footer>
