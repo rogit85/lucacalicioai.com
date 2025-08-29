@@ -1,34 +1,35 @@
 # Best Football Betting Sites UK 2025
 
-Next.js 15 + TypeScript + Tailwind. CMS for editing top hero links and betting sites. Hosted on Vercel with `@vercel/postgres`.
+Static Next.js 15 + TypeScript + Tailwind site. All content is hardcoded for fast deployment.
 
 ## Quick start
 
-1. Environment
+1. Install dependencies
 
 ```bash
-cp .env.local.example .env.local
-# Fill POSTGRES_URL, ADMIN_USER, ADMIN_PASS
+npm install
 ```
 
-2. Database
-
-```bash
-npm run db:setup
-npm run db:seed
-```
-
-3. Dev server
+2. Run dev server
 
 ```bash
 npm run dev
 ```
 
-- Admin at `/admin` protected by Basic Auth using `ADMIN_USER`/`ADMIN_PASS`.
-- API endpoints: `/api/sites`, `/api/hero`, `/api/admin/reseed`.
+3. Visit http://localhost:3000
 
-## Deploy
+## Deploy to Vercel
 
-- Connect GitHub repo to Vercel.
-- Add env vars in Vercel Project Settings: `POSTGRES_URL`, `ADMIN_USER`, `ADMIN_PASS`.
-- Redeploy.
+1. Connect GitHub repo to Vercel
+2. Deploy (no environment variables needed)
+3. Done!
+
+## Features
+
+- ✅ 11+ betting sites with real offers and T&Cs
+- ✅ 4 prominent hero cards
+- ✅ Filterable by offer types
+- ✅ Animated colorful background
+- ✅ Fully responsive design
+- ✅ Static generation for fast loading
+- ✅ Legal compliance pages

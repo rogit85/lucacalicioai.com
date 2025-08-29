@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 type Hero = { id: string; title: string; subtitle: string; brand: string; href: string; color: string };
@@ -28,22 +28,146 @@ const FILTERS = [
   "Bet £10 Get £30",
 ];
 
+const HERO_DATA: Hero[] = [
+  { id: "hero-betmgm", title: "BetMGM", subtitle: "Bet £10, get £40", brand: "betmgm", href: "https://www.betmgm.co.uk/", color: "#111827" },
+  { id: "hero-dabble", title: "Dabble", subtitle: "£10 Free Bet", brand: "dabble", href: "https://www.dabble.com/", color: "#00E5FF" },
+  { id: "hero-bet365", title: "bet365", subtitle: "Bet £10 & Get £30", brand: "bet365", href: "https://www.bet365.com/", color: "#00A651" },
+  { id: "hero-skybet", title: "Sky Bet", subtitle: "Bet 5p get £30", brand: "skybet", href: "https://m.skybet.com/", color: "#1E3A8A" },
+];
+
+const SITES_DATA: Site[] = [
+  {
+    id: "betmgm",
+    name: "BetMGM",
+    logo_url: "/logos/betmgm.svg",
+    tagline: "Bet £10, get £40 in free bets",
+    cta_label: "Claim Offer",
+    cta_url: "https://www.betmgm.co.uk/",
+    score: 8.5,
+    features: ["Enhanced Offers", "Extensive Bet-Builder", "Very Competitive Odds"],
+    tcs: "New customers only. 7 days to place qualifying bet of £10 at 1/1 (2.0) to receive 4 x £10 Free Bets: 1 x £10 football, 1 x £10 horse racing & 2 x £10 Bet Builders. Free Bets cannot be used on e-sports and non UK/IE horse racing. 7 day expiry. Exclusions apply. Stake not returned. 18+. T&Cs apply.",
+  },
+  {
+    id: "dabble",
+    name: "Dabble",
+    logo_url: "/logos/dabble.svg",
+    tagline: "£10 Free Bet No Deposit Required",
+    cta_label: "Claim Here",
+    cta_url: "https://www.dabble.com/",
+    score: 10,
+    features: ["Fantastic Promotions", "Fun Social Media Content", "New Bookmaker"],
+    tcs: "#AD 18+ New customers only. Free Bets credited following registration. Must be wagered 1x at min odds of 1/2 (1.5). 7-day expiry. Stake not returned. Pick Em offer subject to status. Min odds 1/2 (1.5). First Bet Only. Qualifying bets must be placed on active Pick Em Market. Rocket Boosts DNQ. Free bet expries after 7 days.Full T&Cs apply. Gambleaware.org.",
+  },
+  {
+    id: "bet365",
+    name: "bet365",
+    logo_url: "/logos/bet365.svg",
+    tagline: "Bet £10 & Get £30 in Free Racing Bets",
+    cta_label: "Get Offer",
+    cta_url: "https://www.bet365.com/",
+    score: 9.5,
+    features: [],
+    tcs: "#AD. 18+ New customers only. Min deposit requirement. Free Bets are paid as Bet Credits and are available for use upon settlement of bets to value of qualifying deposit. Min odds, bet and payment method exclusions apply. Returns exclude Bet Credits stake. Time limits and T&Cs apply. Registration Required.",
+  },
+  {
+    id: "skybet",
+    name: "Sky Bet",
+    logo_url: "/logos/skybet.svg",
+    tagline: "Bet 5p get £30 in Free Bets",
+    cta_label: "Claim Offer",
+    cta_url: "https://m.skybet.com/",
+    score: 9.5,
+    features: ["Enhanced Offers", "Request A Bet", "Vast selection of sports markets"],
+    tcs: "#AD 18+ New customers only. First single & E/W bet only. Odds of 1/1 or greater. 3 X £10 bet tokens. Free bet stakes not included in returns. Free bets exclude virtuals. Free bets are non withdrawable. Free bets expire after 30 days. Eligibility restrictions and further T&Cs apply.New customers only. First single & E/W bet only. Odds of 1/1 or greater. 3 X £10 bet tokens. Free bet stakes not included in returns. Free bets exclude virtuals. Free bets are non withdrawable. Free bets expire after 30 days. Eligibility restrictions and further T&Cs apply.",
+  },
+  {
+    id: "paddypower",
+    name: "Paddy Power",
+    logo_url: "/logos/paddypower.svg",
+    tagline: "Liverpool v Arsenal Liverpool to win 50/1 Arsenal to win 70/1",
+    cta_label: "Claim here",
+    cta_url: "https://www.paddypower.com/",
+    score: 9,
+    features: [],
+    tcs: "New customer offer. Place a max £1 bet on the Match odds market on Arsenal to beat Liverpool, Sunday, August 31st. Winnings paid in cash at normal odds and are topped up to the enhanced price in Free Bets. Free bets are valid 7 days, only deposits with cards & Apple Pay are eligible. Excludes multiples & in-play bets. T&C's apply. Please gamble responsibly.",
+  },
+  {
+    id: "copybet",
+    name: "CopyBet",
+    logo_url: "/logos/copybet.svg",
+    tagline: "Bet £20, Get £20 in Free Bets + up to 15% daily profit boost",
+    cta_label: "Claim Offer",
+    cta_url: "https://www.copybet.com/",
+    score: 8.5,
+    features: ["Exceptional Mobile App", "Super Fast Withdrawals", "Tipster Best Event"],
+    tcs: "Full T&Cs apply. New UK customers only. The qualifying bet should be either a Single or Acca (2+ selections) bet, start at £20, have 1.9 or greater odds and must be settled within 7 days of opt-in. The Free bet include: 1 x £20 Free bet any Live or Pre-Match event. Max payout – £500. 7-day expiry. To unlock the offer, complete the first deposit via the banking app secured by Truelayer. Profit boost: One boost per day; claim required. 1 day to claim (by 23:59 UTC+3). Max stake £30. Single bets only. No Free Bets. Profit Boost valid for 24 hrs. Max payout £1,000. Credited within 24 hrs. 18+. BeGambleAware.com",
+  },
+  {
+    id: "boylesports",
+    name: "BOYLE Sports",
+    logo_url: "/logos/boylesports.svg",
+    tagline: "£40 in Free Bets + 25% Boost on your Bet Builder winnings",
+    cta_label: "Claim Offer",
+    cta_url: "https://www.boylesports.com/",
+    score: 10,
+    features: ["Daily Promotions & Free Bets", "Super Fast Withdrawals", "Vast selection of sports markets"],
+    tcs: "18+ New UK customers (Excluding NI) only. £40 in FREE Bets (FB) as £30 in sports bets & a £10 casino bonus (CB). Min Deposit £10. Min stake £10. Min odds Evs. FB applied on 1st settlement of any qualifying bet. FB 7-day expiry. 1 FB offer per customer, household & IP address only. Account & Payment restrictions. 14 days to accept £10 CB, then active for 3 days. CB 5x wagering & max redeemable £100. Game restrictions apply. Cashed out/Free Bets won't apply. 30 days to qualify. T&Cs Apply",
+  },
+  {
+    id: "betmaze",
+    name: "Betmaze",
+    logo_url: "/logos/betmaze.svg",
+    tagline: "Bet £20 and get £20 in free bets",
+    cta_label: "CLAIM HERE",
+    cta_url: "https://www.betmaze.com/",
+    score: 8,
+    features: ["Enhanced Offers", "New Bookmaker", "Very Competitive Odds"],
+    tcs: "18+. New customers only. Min deposit: £20. Min wager: £20 at min odds 1/1 (2.00). Max free bet amount: £20. Eligible bets: single, combo, bet builder. Max 1 free bet per user. Max free bet winnings: £200. Free bet is not valid for Horse Racing. Free bet token credited within 24 hours, valid for 14 days. System bet excluded. Free bet min odds: 4/5 (1.80). T&Cs apply. gambleaware.org",
+  },
+  {
+    id: "midnite",
+    name: "Midnite",
+    logo_url: "/logos/midnite.svg",
+    tagline: "Bet £10, get £20 plus 50 free spins",
+    cta_label: "Claim Offer",
+    cta_url: "https://www.midnite.com/",
+    score: 10,
+    features: ["Great for ESports", "Modern Betting Platform", "Uniquely Designed Sportsbook"],
+    tcs: "18+ New UK customers. Bet £10 on accas with 4+ legs, min odds 3/1 (4.0). Get 4x £5 Free Bets and 50 Free Spins, valid for 7 days on selected bets and games only. T&Cs apply. BeGambleAware.org",
+  },
+  {
+    id: "akbets",
+    name: "AK Bets",
+    logo_url: "/logos/akbets.svg",
+    tagline: "Up to £100 Winnings Boost on your first Acca",
+    cta_label: "Claim Offer",
+    cta_url: "https://www.akbets.com/",
+    score: 10,
+    features: ["Fun Social Media Content", "Modern Betting Platform", "Very Competitive Odds"],
+    tcs: "If your first bet is a Treble or Up on Any Sport (minimum 3 selections) AK Bets will boost the profit gained on that initial bet by 25% in the form of a Free Bet up to a value of £100. Applies to new customers who sign up to AK BETS with the promo code AKACCA100. 18+ GambleAware.org.",
+  },
+  {
+    id: "matchbook",
+    name: "Matchbook",
+    logo_url: "/logos/matchbook.svg",
+    tagline: "Get £30 In Free Bets when you bet £20",
+    cta_label: "Claim Offer",
+    cta_url: "https://www.matchbook.com/",
+    score: 8.5,
+    features: [],
+    tcs: "18+ New UK customers only. T&Cs apply. BeGambleAware.org",
+  },
+];
+
 export default function Home() {
-  const [hero, setHero] = useState<Hero[]>([]);
-  const [sites, setSites] = useState<Site[]>([]);
   const [activeFilter, setActiveFilter] = useState("All");
 
-  useEffect(() => {
-    fetch("/api/hero").then((r) => r.json()).then(setHero);
-  }, []);
-
-  useEffect(() => {
-    const url = new URL(window.location.origin + "/api/sites");
-    if (activeFilter && activeFilter !== "All") url.searchParams.set("filter", activeFilter);
-    fetch(url.toString()).then((r) => r.json()).then(setSites);
+  const filteredSites = useMemo(() => {
+    if (activeFilter === "All") return SITES_DATA;
+    return SITES_DATA.filter((site) =>
+      site.features.some((feature) => feature.toLowerCase().includes(activeFilter.toLowerCase()))
+    );
   }, [activeFilter]);
-
-  const sortedSites = useMemo(() => sites, [sites]);
 
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
@@ -150,7 +274,7 @@ export default function Home() {
         
         {/* Prominent Hero Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
-          {hero.map((h, index) => (
+          {HERO_DATA.map((h, index) => (
             <motion.a
               key={h.id}
               href={h.href}
@@ -212,7 +336,7 @@ export default function Home() {
         </div>
 
         <div className="space-y-6">
-          {sortedSites.map((s, index) => (
+          {filteredSites.map((s, index) => (
             <motion.div
               key={s.id}
               initial={{ opacity: 0, y: 20 }}
