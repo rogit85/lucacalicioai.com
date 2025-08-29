@@ -48,9 +48,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
       {/* Animated Football Background Elements */}
-      <div className="fixed inset-0 pointer-events-none opacity-20">
+      <div className="fixed inset-0 pointer-events-none opacity-25">
         <motion.div
-          className="absolute w-16 h-16 bg-green-500 rounded-full blur-sm"
+          className="absolute w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full blur-sm"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -64,7 +64,7 @@ export default function Home() {
           style={{ top: "10%", left: "10%" }}
         />
         <motion.div
-          className="absolute w-12 h-12 bg-orange-400 rounded-full blur-sm"
+          className="absolute w-12 h-12 bg-gradient-to-r from-orange-400 to-red-500 rounded-full blur-sm"
           animate={{
             x: [0, -80, 0],
             y: [0, 60, 0],
@@ -79,7 +79,7 @@ export default function Home() {
           style={{ top: "30%", right: "15%" }}
         />
         <motion.div
-          className="absolute w-20 h-20 bg-blue-400 rounded-full blur-sm"
+          className="absolute w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-sm"
           animate={{
             x: [0, 120, 0],
             y: [0, -80, 0],
@@ -94,7 +94,7 @@ export default function Home() {
           style={{ bottom: "20%", left: "20%" }}
         />
         <motion.div
-          className="absolute w-14 h-14 bg-red-400 rounded-full blur-sm"
+          className="absolute w-14 h-14 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full blur-sm"
           animate={{
             x: [0, -90, 0],
             y: [0, 70, 0],
@@ -108,6 +108,36 @@ export default function Home() {
           }}
           style={{ bottom: "40%", right: "25%" }}
         />
+        <motion.div
+          className="absolute w-18 h-18 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full blur-sm"
+          animate={{
+            x: [0, -110, 0],
+            y: [0, -90, 0],
+            rotate: [0, 270],
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 4,
+          }}
+          style={{ top: "60%", left: "5%" }}
+        />
+        <motion.div
+          className="absolute w-10 h-10 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full blur-sm"
+          animate={{
+            x: [0, 85, 0],
+            y: [0, 45, 0],
+            rotate: [0, -270],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 5,
+          }}
+          style={{ top: "80%", right: "10%" }}
+        />
       </div>
 
       <section className="relative mx-auto max-w-6xl px-4 py-16">
@@ -119,14 +149,14 @@ export default function Home() {
         </p>
         
         {/* Prominent Hero Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {hero.map((h, index) => (
             <motion.a
               key={h.id}
               href={h.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 hover:border-gray-300 min-h-[200px] group overflow-hidden"
+              className="relative rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 hover:border-gray-300 min-h-[180px] group overflow-hidden"
               whileHover={{ scale: 1.05, y: -5 }}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -139,23 +169,18 @@ export default function Home() {
               />
               
               <div className="relative z-10 flex flex-col justify-between h-full">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <div className="text-2xl font-bold text-gray-900 mb-2">{h.title}</div>
-                    <div className="text-lg text-gray-600 font-medium">{h.subtitle}</div>
-                  </div>
+                <div className="text-center mb-4">
                   <div 
-                    className="w-16 h-16 rounded-xl shadow-lg flex-shrink-0"
+                    className="w-12 h-12 rounded-xl shadow-lg mx-auto mb-3"
                     style={{ backgroundColor: h.color }}
                   />
+                  <div className="text-xl font-bold text-gray-900 mb-1">{h.title}</div>
+                  <div className="text-sm text-gray-600 font-medium">{h.subtitle}</div>
                 </div>
                 
-                <div className="flex items-center justify-between">
-                  <div className="text-sm text-gray-500 font-medium">
-                    Click to Claim Offer
-                  </div>
+                <div className="text-center">
                   <motion.div
-                    className="bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold shadow-lg"
+                    className="bg-gray-900 text-white px-4 py-2 rounded-lg font-semibold shadow-lg text-sm inline-block"
                     whileHover={{ backgroundColor: h.color }}
                     transition={{ duration: 0.2 }}
                   >
