@@ -38,7 +38,7 @@ export default function CookiesPage() {
       <h3>Third-Party Cookies</h3>
       <p>
         Some of our pages may contain content from third parties (such as embedded videos or social media buttons), 
-        which may set their own cookies. We don't control these cookies.
+        which may set their own cookies. We don&apos;t control these cookies.
       </p>
 
       <h2>4. Managing Cookies</h2>
