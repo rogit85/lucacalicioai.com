@@ -24,3 +24,30 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Animated football background helpers */
+@keyframes footballScroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 800px 400px; }
+}
+
+@keyframes footballScrollReverse {
+  0% { background-position: 0 0; }
+  100% { background-position: -800px -400px; }
+}
+
+.football-bg {
+  background-image: url('/football.png');
+  background-repeat: repeat;
+  background-size: 120px 120px;
+  animation: footballScroll 60s linear infinite;
+  opacity: 0.1;
+}
+
+.football-bg-reverse {
+  background-image: url('/football.png');
+  background-repeat: repeat;
+  background-size: 140px 140px;
+  animation: footballScrollReverse 90s linear infinite;
+  opacity: 0.06;
+}

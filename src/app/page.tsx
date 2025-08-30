@@ -171,17 +171,10 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
-      {/* Background: repeated football image + subtle Italian flag tint */}
+      {/* Background: animated football layers + Italian flag tint bands */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url('/football.png')",
-            backgroundSize: "120px 120px",
-            backgroundRepeat: "repeat",
-            opacity: 0.08,
-          }}
-        />
+        <div className="absolute inset-0 football-bg" />
+        <div className="absolute inset-0 football-bg-reverse" />
         <div className="absolute inset-y-0 left-0 w-1/3 bg-green-600/5" />
         <div className="absolute inset-y-0 left-1/3 w-1/3 bg-white/0" />
         <div className="absolute inset-y-0 right-0 w-1/3 bg-red-600/5" />
