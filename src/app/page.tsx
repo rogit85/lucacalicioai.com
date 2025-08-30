@@ -172,10 +172,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
       {/* Animated Football Background Elements */}
-      <div className="fixed inset-0 pointer-events-none opacity-25">
+      <div className="fixed inset-0 pointer-events-none opacity-20">
         {/* Football 1 - Green */}
         <motion.div
-          className="absolute w-16 h-16 blur-sm"
+          className="absolute w-16 h-16"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -189,22 +189,20 @@ export default function Home() {
           style={{ top: "10%", left: "10%" }}
         >
           <svg width="64" height="64" viewBox="0 0 64 64" className="w-full h-full">
-            <circle cx="32" cy="32" r="30" fill="url(#greenGradient)" stroke="#15803d" strokeWidth="2"/>
-            <path d="M8 32C20 20 32 12 56 32" stroke="#15803d" strokeWidth="2" fill="none"/>
-            <path d="M32 8C20 22 12 32 32 56" stroke="#15803d" strokeWidth="2" fill="none"/>
-            <path d="M56 32C44 44 32 52 8 32" stroke="#15803d" strokeWidth="2" fill="none"/>
-            <defs>
-              <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#16a34a"/>
-                <stop offset="100%" stopColor="#22c55e"/>
-              </linearGradient>
-            </defs>
+            <circle cx="32" cy="32" r="30" fill="white" stroke="#16a34a" strokeWidth="3"/>
+            {/* Football panel lines */}
+            <path d="M8 32 Q32 8 56 32" stroke="#16a34a" strokeWidth="2" fill="none"/>
+            <path d="M32 8 Q56 32 32 56" stroke="#16a34a" strokeWidth="2" fill="none"/>
+            <path d="M56 32 Q32 56 8 32" stroke="#16a34a" strokeWidth="2" fill="none"/>
+            <path d="M8 32 Q32 56 56 32" stroke="#16a34a" strokeWidth="2" fill="none"/>
+            <path d="M32 8 Q8 32 32 56" stroke="#16a34a" strokeWidth="2" fill="none"/>
+            <circle cx="32" cy="32" r="8" fill="#16a34a"/>
           </svg>
         </motion.div>
 
-        {/* Football 2 - Red */}
+        {/* Football 2 - White */}
         <motion.div
-          className="absolute w-12 h-12 blur-sm"
+          className="absolute w-12 h-12"
           animate={{
             x: [0, -80, 0],
             y: [0, 60, 0],
@@ -219,22 +217,19 @@ export default function Home() {
           style={{ top: "30%", right: "15%" }}
         >
           <svg width="48" height="48" viewBox="0 0 48 48" className="w-full h-full">
-            <circle cx="24" cy="24" r="22" fill="url(#redGradient)" stroke="#dc2626" strokeWidth="2"/>
-            <path d="M6 24C15 15 24 9 42 24" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <path d="M24 6C15 16.5 9 24 24 42" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <path d="M42 24C33 33 24 39 6 24" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <defs>
-              <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#dc2626"/>
-                <stop offset="100%" stopColor="#ef4444"/>
-              </linearGradient>
-            </defs>
+            <circle cx="24" cy="24" r="22" fill="white" stroke="#374151" strokeWidth="3"/>
+            <path d="M6 24 Q24 6 42 24" stroke="#374151" strokeWidth="2" fill="none"/>
+            <path d="M24 6 Q42 24 24 42" stroke="#374151" strokeWidth="2" fill="none"/>
+            <path d="M42 24 Q24 42 6 24" stroke="#374151" strokeWidth="2" fill="none"/>
+            <path d="M6 24 Q24 42 42 24" stroke="#374151" strokeWidth="2" fill="none"/>
+            <path d="M24 6 Q6 24 24 42" stroke="#374151" strokeWidth="2" fill="none"/>
+            <circle cx="24" cy="24" r="6" fill="#374151"/>
           </svg>
         </motion.div>
 
-        {/* Football 3 - Green Large */}
+        {/* Football 3 - Red */}
         <motion.div
-          className="absolute w-20 h-20 blur-sm"
+          className="absolute w-20 h-20"
           animate={{
             x: [0, 120, 0],
             y: [0, -80, 0],
@@ -249,22 +244,19 @@ export default function Home() {
           style={{ bottom: "20%", left: "20%" }}
         >
           <svg width="80" height="80" viewBox="0 0 80 80" className="w-full h-full">
-            <circle cx="40" cy="40" r="38" fill="url(#greenGradient2)" stroke="#15803d" strokeWidth="2"/>
-            <path d="M10 40C25 25 40 15 70 40" stroke="#15803d" strokeWidth="2" fill="none"/>
-            <path d="M40 10C25 27.5 15 40 40 70" stroke="#15803d" strokeWidth="2" fill="none"/>
-            <path d="M70 40C55 55 40 65 10 40" stroke="#15803d" strokeWidth="2" fill="none"/>
-            <defs>
-              <linearGradient id="greenGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#22c55e"/>
-                <stop offset="100%" stopColor="#16a34a"/>
-              </linearGradient>
-            </defs>
+            <circle cx="40" cy="40" r="38" fill="white" stroke="#dc2626" strokeWidth="3"/>
+            <path d="M10 40 Q40 10 70 40" stroke="#dc2626" strokeWidth="2" fill="none"/>
+            <path d="M40 10 Q70 40 40 70" stroke="#dc2626" strokeWidth="2" fill="none"/>
+            <path d="M70 40 Q40 70 10 40" stroke="#dc2626" strokeWidth="2" fill="none"/>
+            <path d="M10 40 Q40 70 70 40" stroke="#dc2626" strokeWidth="2" fill="none"/>
+            <path d="M40 10 Q10 40 40 70" stroke="#dc2626" strokeWidth="2" fill="none"/>
+            <circle cx="40" cy="40" r="10" fill="#dc2626"/>
           </svg>
         </motion.div>
 
-        {/* Football 4 - Red Medium */}
+        {/* Football 4 - Green Medium */}
         <motion.div
-          className="absolute w-14 h-14 blur-sm"
+          className="absolute w-14 h-14"
           animate={{
             x: [0, -90, 0],
             y: [0, 70, 0],
@@ -279,22 +271,19 @@ export default function Home() {
           style={{ bottom: "40%", right: "25%" }}
         >
           <svg width="56" height="56" viewBox="0 0 56 56" className="w-full h-full">
-            <circle cx="28" cy="28" r="26" fill="url(#redGradient2)" stroke="#dc2626" strokeWidth="2"/>
-            <path d="M7 28C17.5 17.5 28 10.5 49 28" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <path d="M28 7C17.5 19.25 10.5 28 28 49" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <path d="M49 28C38.5 38.5 28 45.5 7 28" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <defs>
-              <linearGradient id="redGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#ef4444"/>
-                <stop offset="100%" stopColor="#dc2626"/>
-              </linearGradient>
-            </defs>
+            <circle cx="28" cy="28" r="26" fill="white" stroke="#16a34a" strokeWidth="3"/>
+            <path d="M7 28 Q28 7 49 28" stroke="#16a34a" strokeWidth="2" fill="none"/>
+            <path d="M28 7 Q49 28 28 49" stroke="#16a34a" strokeWidth="2" fill="none"/>
+            <path d="M49 28 Q28 49 7 28" stroke="#16a34a" strokeWidth="2" fill="none"/>
+            <path d="M7 28 Q28 49 49 28" stroke="#16a34a" strokeWidth="2" fill="none"/>
+            <path d="M28 7 Q7 28 28 49" stroke="#16a34a" strokeWidth="2" fill="none"/>
+            <circle cx="28" cy="28" r="7" fill="#16a34a"/>
           </svg>
         </motion.div>
 
-        {/* Football 5 - Green Medium */}
+        {/* Football 5 - White Medium */}
         <motion.div
-          className="absolute w-16 h-16 blur-sm"
+          className="absolute w-16 h-16"
           animate={{
             x: [0, -110, 0],
             y: [0, -90, 0],
@@ -309,22 +298,19 @@ export default function Home() {
           style={{ top: "60%", left: "5%" }}
         >
           <svg width="64" height="64" viewBox="0 0 64 64" className="w-full h-full">
-            <circle cx="32" cy="32" r="30" fill="url(#greenGradient3)" stroke="#15803d" strokeWidth="2"/>
-            <path d="M8 32C20 20 32 12 56 32" stroke="#15803d" strokeWidth="2" fill="none"/>
-            <path d="M32 8C20 22 12 32 32 56" stroke="#15803d" strokeWidth="2" fill="none"/>
-            <path d="M56 32C44 44 32 52 8 32" stroke="#15803d" strokeWidth="2" fill="none"/>
-            <defs>
-              <linearGradient id="greenGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#15803d"/>
-                <stop offset="100%" stopColor="#22c55e"/>
-              </linearGradient>
-            </defs>
+            <circle cx="32" cy="32" r="30" fill="white" stroke="#374151" strokeWidth="3"/>
+            <path d="M8 32 Q32 8 56 32" stroke="#374151" strokeWidth="2" fill="none"/>
+            <path d="M32 8 Q56 32 32 56" stroke="#374151" strokeWidth="2" fill="none"/>
+            <path d="M56 32 Q32 56 8 32" stroke="#374151" strokeWidth="2" fill="none"/>
+            <path d="M8 32 Q32 56 56 32" stroke="#374151" strokeWidth="2" fill="none"/>
+            <path d="M32 8 Q8 32 32 56" stroke="#374151" strokeWidth="2" fill="none"/>
+            <circle cx="32" cy="32" r="8" fill="#374151"/>
           </svg>
         </motion.div>
 
         {/* Football 6 - Red Small */}
         <motion.div
-          className="absolute w-10 h-10 blur-sm"
+          className="absolute w-10 h-10"
           animate={{
             x: [0, 85, 0],
             y: [0, 45, 0],
@@ -339,16 +325,13 @@ export default function Home() {
           style={{ top: "80%", right: "10%" }}
         >
           <svg width="40" height="40" viewBox="0 0 40 40" className="w-full h-full">
-            <circle cx="20" cy="20" r="18" fill="url(#redGradient3)" stroke="#dc2626" strokeWidth="2"/>
-            <path d="M5 20C12.5 12.5 20 7.5 35 20" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <path d="M20 5C12.5 13.75 7.5 20 20 35" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <path d="M35 20C27.5 27.5 20 32.5 5 20" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <defs>
-              <linearGradient id="redGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f87171"/>
-                <stop offset="100%" stopColor="#dc2626"/>
-              </linearGradient>
-            </defs>
+            <circle cx="20" cy="20" r="18" fill="white" stroke="#dc2626" strokeWidth="3"/>
+            <path d="M5 20 Q20 5 35 20" stroke="#dc2626" strokeWidth="2" fill="none"/>
+            <path d="M20 5 Q35 20 20 35" stroke="#dc2626" strokeWidth="2" fill="none"/>
+            <path d="M35 20 Q20 35 5 20" stroke="#dc2626" strokeWidth="2" fill="none"/>
+            <path d="M5 20 Q20 35 35 20" stroke="#dc2626" strokeWidth="2" fill="none"/>
+            <path d="M20 5 Q5 20 20 35" stroke="#dc2626" strokeWidth="2" fill="none"/>
+            <circle cx="20" cy="20" r="5" fill="#dc2626"/>
           </svg>
         </motion.div>
       </div>
@@ -515,9 +498,9 @@ export default function Home() {
             <div className="text-gray-600 font-medium">© {new Date().getFullYear()} Luca Calcio AI - Edge Ahead Media Limited</div>
           </div>
           <div className="flex gap-4">
-            <a className="px-4 py-2 rounded-lg border-2 border-green-500 bg-green-100 text-green-800 hover:bg-green-600 hover:text-white font-medium transition-all shadow-md hover:shadow-lg" href="/terms">Terms & Conditions</a>
-            <a className="px-4 py-2 rounded-lg border-2 border-red-500 bg-red-100 text-red-800 hover:bg-red-600 hover:text-white font-medium transition-all shadow-md hover:shadow-lg" href="/privacy">Privacy Policy</a>
-            <a className="px-4 py-2 rounded-lg border-2 border-gray-500 bg-gray-100 text-gray-800 hover:bg-gray-600 hover:text-white font-medium transition-all shadow-md hover:shadow-lg" href="/cookies">Cookie Policy</a>
+            <a className="px-4 py-2 rounded-lg border-2 border-green-600 bg-green-600 text-white hover:bg-green-700 hover:border-green-700 font-medium transition-all shadow-md hover:shadow-lg" href="/terms">Terms & Conditions</a>
+            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 bg-white text-gray-900 hover:bg-gray-100 hover:border-gray-400 font-medium transition-all shadow-md hover:shadow-lg" href="/privacy">Privacy Policy</a>
+            <a className="px-4 py-2 rounded-lg border-2 border-red-600 bg-red-600 text-white hover:bg-red-700 hover:border-red-700 font-medium transition-all shadow-md hover:shadow-lg" href="/cookies">Cookie Policy</a>
           </div>
         </div>
       </footer>

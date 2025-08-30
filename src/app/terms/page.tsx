@@ -105,9 +105,9 @@ export default function TermsPage() {
             <div className="text-gray-600 font-medium">© 2025 Luca Calcio AI - Edge Ahead Media Limited</div>
           </div>
           <div className="flex gap-4">
-            <Link href="/" className="px-4 py-2 rounded-lg border-2 border-green-500 bg-green-100 text-green-800 hover:bg-green-600 hover:text-white font-medium transition-all shadow-md hover:shadow-lg">← Back to Home</Link>
-            <Link href="/privacy" className="px-4 py-2 rounded-lg border-2 border-red-500 bg-red-100 text-red-800 hover:bg-red-600 hover:text-white font-medium transition-all shadow-md hover:shadow-lg">Privacy Policy</Link>
-            <Link href="/cookies" className="px-4 py-2 rounded-lg border-2 border-gray-500 bg-gray-100 text-gray-800 hover:bg-gray-600 hover:text-white font-medium transition-all shadow-md hover:shadow-lg">Cookie Policy</Link>
+            <Link href="/" className="px-4 py-2 rounded-lg border-2 border-green-600 bg-green-600 text-white hover:bg-green-700 hover:border-green-700 font-medium transition-all shadow-md hover:shadow-lg">← Back to Home</Link>
+            <Link href="/privacy" className="px-4 py-2 rounded-lg border-2 border-gray-300 bg-white text-gray-900 hover:bg-gray-100 hover:border-gray-400 font-medium transition-all shadow-md hover:shadow-lg">Privacy Policy</Link>
+            <Link href="/cookies" className="px-4 py-2 rounded-lg border-2 border-red-600 bg-red-600 text-white hover:bg-red-700 hover:border-red-700 font-medium transition-all shadow-md hover:shadow-lg">Cookie Policy</Link>
           </div>
         </div>
       </footer>
