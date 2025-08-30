@@ -171,13 +171,121 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
-      {/* Background: animated football layers + Italian flag tint bands */}
-      <div className="fixed inset-0 -z-10 pointer-events-none">
-        <div className="absolute inset-0 football-bg" />
-        <div className="absolute inset-0 football-bg-reverse" />
-        <div className="absolute inset-y-0 left-0 w-1/3 bg-green-600/5" />
-        <div className="absolute inset-y-0 left-1/3 w-1/3 bg-white/0" />
-        <div className="absolute inset-y-0 right-0 w-1/3 bg-red-600/5" />
+      {/* Background: animated football elements with Italian colors */}
+      <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+        {/* Layer 1: Green-tinted footballs */}
+        <motion.div
+          className="absolute w-32 h-32 blur-sm"
+          style={{ 
+            backgroundImage: "url('/football.png')",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            filter: "brightness(0) saturate(100%) invert(26%) sepia(89%) saturate(1583%) hue-rotate(118deg) brightness(96%) contrast(106%)",
+            top: "10%",
+            left: "5%"
+          }}
+          animate={{ 
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+            rotate: [0, 360]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        
+        {/* Layer 2: White footballs */}
+        <motion.div
+          className="absolute w-24 h-24 blur-sm opacity-70"
+          style={{ 
+            backgroundImage: "url('/football.png')",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            filter: "brightness(0) saturate(100%) invert(100%)",
+            top: "25%",
+            right: "10%"
+          }}
+          animate={{ 
+            x: [0, -150, 0],
+            y: [0, 80, 0],
+            rotate: [0, -360]
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear", delay: 2 }}
+        />
+        
+        {/* Layer 3: Red-tinted footballs */}
+        <motion.div
+          className="absolute w-36 h-36 blur-sm"
+          style={{ 
+            backgroundImage: "url('/football.png')",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            filter: "brightness(0) saturate(100%) invert(21%) sepia(100%) saturate(7483%) hue-rotate(358deg) brightness(108%) contrast(117%)",
+            bottom: "20%",
+            left: "20%"
+          }}
+          animate={{ 
+            x: [0, 120, 0],
+            y: [0, -100, 0],
+            rotate: [0, 180]
+          }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear", delay: 4 }}
+        />
+        
+        {/* Layer 4: Green football */}
+        <motion.div
+          className="absolute w-28 h-28 blur-sm opacity-80"
+          style={{ 
+            backgroundImage: "url('/football.png')",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            filter: "brightness(0) saturate(100%) invert(26%) sepia(89%) saturate(1583%) hue-rotate(118deg) brightness(96%) contrast(106%)",
+            bottom: "10%",
+            right: "15%"
+          }}
+          animate={{ 
+            x: [0, -80, 0],
+            y: [0, -60, 0],
+            rotate: [0, -180]
+          }}
+          transition={{ duration: 22, repeat: Infinity, ease: "linear", delay: 6 }}
+        />
+        
+        {/* Layer 5: White football */}
+        <motion.div
+          className="absolute w-20 h-20 blur-sm opacity-60"
+          style={{ 
+            backgroundImage: "url('/football.png')",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            filter: "brightness(0) saturate(100%) invert(100%)",
+            top: "50%",
+            left: "50%"
+          }}
+          animate={{ 
+            x: [-100, 100, -100],
+            y: [-50, 50, -50],
+            rotate: [0, 360, 720]
+          }}
+          transition={{ duration: 35, repeat: Infinity, ease: "linear", delay: 8 }}
+        />
+        
+        {/* Layer 6: Red football */}
+        <motion.div
+          className="absolute w-32 h-32 blur-sm opacity-70"
+          style={{ 
+            backgroundImage: "url('/football.png')",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            filter: "brightness(0) saturate(100%) invert(21%) sepia(100%) saturate(7483%) hue-rotate(358deg) brightness(108%) contrast(117%)",
+            top: "70%",
+            left: "40%"
+          }}
+          animate={{ 
+            x: [0, 60, 0],
+            y: [0, -40, 0],
+            rotate: [0, -360]
+          }}
+          transition={{ duration: 28, repeat: Infinity, ease: "linear", delay: 10 }}
+        />
       </div>
 
       {/* Header with Logo */}

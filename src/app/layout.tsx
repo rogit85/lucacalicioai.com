@@ -16,11 +16,6 @@ export const metadata: Metadata = {
   title: "Best Football Betting Sites UK 2025 | Luca Calcio AI",
   description:
     "Compare the best football betting sites in the UK for 2025 with Luca Calcio AI. Explore top offers, acca boosts, live streaming, and more.",
-  icons: [
-    { rel: "icon", url: "/Luca.jpeg", type: "image/jpeg" },
-    { rel: "shortcut icon", url: "/Luca.jpeg", type: "image/jpeg" },
-    { rel: "apple-touch-icon", url: "/Luca.jpeg" },
-  ],
 };
 
 export default function RootLayout({
@@ -30,6 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/Luca.jpeg" sizes="any" />
+        <link rel="shortcut icon" href="/Luca.jpeg" />
+        <link rel="apple-touch-icon" href="/Luca.jpeg" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}>
         {children}
       </body>
