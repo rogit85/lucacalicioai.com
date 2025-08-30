@@ -171,156 +171,20 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
-      {/* Animated Football Background Elements */}
-      <div className="fixed inset-0 pointer-events-none opacity-20">
-        {/* Green Football */}
-        <motion.div
-          className="absolute w-16 h-16"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-            rotate: [0, 360],
+      {/* Background: repeated football image + subtle Italian flag tint */}
+      <div className="fixed inset-0 -z-10 pointer-events-none">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('/football.png')",
+            backgroundSize: "120px 120px",
+            backgroundRepeat: "repeat",
+            opacity: 0.08,
           }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          style={{ top: "10%", left: "10%" }}
-        >
-          <div className="w-full h-full rounded-full bg-green-600 border-4 border-white shadow-lg relative">
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full"></div>
-            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full"></div>
-            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full"></div>
-            <div className="absolute top-1/2 left-2 transform -translate-y-1/2 w-2 h-2 bg-white rounded-full"></div>
-            <div className="absolute top-1/2 right-2 transform -translate-y-1/2 w-2 h-2 bg-white rounded-full"></div>
-          </div>
-        </motion.div>
-
-        {/* White Football */}
-        <motion.div
-          className="absolute w-12 h-12"
-          animate={{
-            x: [0, -80, 0],
-            y: [0, 60, 0],
-            rotate: [0, -360],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-          style={{ top: "30%", right: "15%" }}
-        >
-          <div className="w-full h-full rounded-full bg-white border-4 border-gray-800 shadow-lg relative">
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-gray-800 rounded-full"></div>
-            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-            <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-            <div className="absolute top-1/2 left-1 transform -translate-y-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-            <div className="absolute top-1/2 right-1 transform -translate-y-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-          </div>
-        </motion.div>
-
-        {/* Red Football */}
-        <motion.div
-          className="absolute w-18 h-18"
-          animate={{
-            x: [0, 120, 0],
-            y: [0, -80, 0],
-            rotate: [0, 180],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-          style={{ bottom: "20%", left: "20%" }}
-        >
-          <div className="w-full h-full rounded-full bg-red-600 border-4 border-white shadow-lg relative">
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-white rounded-full"></div>
-            <div className="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full"></div>
-            <div className="absolute bottom-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full"></div>
-            <div className="absolute top-1/2 left-1.5 transform -translate-y-1/2 w-1.5 h-1.5 bg-white rounded-full"></div>
-            <div className="absolute top-1/2 right-1.5 transform -translate-y-1/2 w-1.5 h-1.5 bg-white rounded-full"></div>
-          </div>
-        </motion.div>
-
-        {/* Green Football Small */}
-        <motion.div
-          className="absolute w-12 h-12"
-          animate={{
-            x: [0, -90, 0],
-            y: [0, 70, 0],
-            rotate: [0, -180],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 3,
-          }}
-          style={{ bottom: "40%", right: "25%" }}
-        >
-          <div className="w-full h-full rounded-full bg-green-600 border-4 border-white shadow-lg relative">
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full"></div>
-            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
-            <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
-            <div className="absolute top-1/2 left-1 transform -translate-y-1/2 w-1 h-1 bg-white rounded-full"></div>
-            <div className="absolute top-1/2 right-1 transform -translate-y-1/2 w-1 h-1 bg-white rounded-full"></div>
-          </div>
-        </motion.div>
-
-        {/* White Football Medium */}
-        <motion.div
-          className="absolute w-14 h-14"
-          animate={{
-            x: [0, -110, 0],
-            y: [0, -90, 0],
-            rotate: [0, 270],
-          }}
-          transition={{
-            duration: 9,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 4,
-          }}
-          style={{ top: "60%", left: "5%" }}
-        >
-          <div className="w-full h-full rounded-full bg-white border-4 border-gray-800 shadow-lg relative">
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-gray-800 rounded-full"></div>
-            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-            <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-            <div className="absolute top-1/2 left-1 transform -translate-y-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-            <div className="absolute top-1/2 right-1 transform -translate-y-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-          </div>
-        </motion.div>
-
-        {/* Red Football Small */}
-        <motion.div
-          className="absolute w-10 h-10"
-          animate={{
-            x: [0, 85, 0],
-            y: [0, 45, 0],
-            rotate: [0, -270],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 5,
-          }}
-          style={{ top: "80%", right: "10%" }}
-        >
-          <div className="w-full h-full rounded-full bg-red-600 border-4 border-white shadow-lg relative">
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-white rounded-full"></div>
-            <div className="absolute top-0.5 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
-            <div className="absolute bottom-0.5 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
-            <div className="absolute top-1/2 left-0.5 transform -translate-y-1/2 w-1 h-1 bg-white rounded-full"></div>
-            <div className="absolute top-1/2 right-0.5 transform -translate-y-1/2 w-1 h-1 bg-white rounded-full"></div>
-          </div>
-        </motion.div>
+        />
+        <div className="absolute inset-y-0 left-0 w-1/3 bg-green-600/5" />
+        <div className="absolute inset-y-0 left-1/3 w-1/3 bg-white/0" />
+        <div className="absolute inset-y-0 right-0 w-1/3 bg-red-600/5" />
       </div>
 
       {/* Header with Logo */}
