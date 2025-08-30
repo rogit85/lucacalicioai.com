@@ -171,10 +171,10 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
-      {/* Animated Football Background Elements */}
-      <div className="fixed inset-0 pointer-events-none opacity-25">
+      {/* Animated Italian-themed Background Elements */}
+      <div className="fixed inset-0 pointer-events-none opacity-30">
         <motion.div
-          className="absolute w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full blur-sm"
+          className="absolute w-16 h-16 bg-gradient-to-r from-green-600 to-green-500 rounded-full blur-sm"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -188,7 +188,7 @@ export default function Home() {
           style={{ top: "10%", left: "10%" }}
         />
         <motion.div
-          className="absolute w-12 h-12 bg-gradient-to-r from-orange-400 to-red-500 rounded-full blur-sm"
+          className="absolute w-12 h-12 bg-gradient-to-r from-red-600 to-red-500 rounded-full blur-sm"
           animate={{
             x: [0, -80, 0],
             y: [0, 60, 0],
@@ -203,7 +203,7 @@ export default function Home() {
           style={{ top: "30%", right: "15%" }}
         />
         <motion.div
-          className="absolute w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-sm"
+          className="absolute w-20 h-20 bg-gradient-to-r from-green-500 to-green-400 rounded-full blur-sm"
           animate={{
             x: [0, 120, 0],
             y: [0, -80, 0],
@@ -218,7 +218,7 @@ export default function Home() {
           style={{ bottom: "20%", left: "20%" }}
         />
         <motion.div
-          className="absolute w-14 h-14 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full blur-sm"
+          className="absolute w-14 h-14 bg-gradient-to-r from-red-500 to-red-400 rounded-full blur-sm"
           animate={{
             x: [0, -90, 0],
             y: [0, 70, 0],
@@ -233,7 +233,7 @@ export default function Home() {
           style={{ bottom: "40%", right: "25%" }}
         />
         <motion.div
-          className="absolute w-18 h-18 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full blur-sm"
+          className="absolute w-18 h-18 bg-gradient-to-r from-green-400 to-green-300 rounded-full blur-sm"
           animate={{
             x: [0, -110, 0],
             y: [0, -90, 0],
@@ -248,7 +248,7 @@ export default function Home() {
           style={{ top: "60%", left: "5%" }}
         />
         <motion.div
-          className="absolute w-10 h-10 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full blur-sm"
+          className="absolute w-10 h-10 bg-gradient-to-r from-red-400 to-red-300 rounded-full blur-sm"
           animate={{
             x: [0, 85, 0],
             y: [0, 45, 0],
@@ -264,8 +264,32 @@ export default function Home() {
         />
       </div>
 
-      <section className="relative mx-auto max-w-6xl px-4 py-16">
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-center mb-6">
+      {/* Header with Logo */}
+      <header className="relative mx-auto max-w-6xl px-4 pt-8 pb-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Image 
+              src="/Luca.jpeg" 
+              alt="Luca Calcio AI" 
+              width={60} 
+              height={60} 
+              className="rounded-full border-3 border-green-600 shadow-lg"
+            />
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900">Luca Calcio AI</h2>
+              <p className="text-sm text-gray-600">Football Betting Expert</p>
+            </div>
+          </div>
+          <div className="hidden md:flex items-center gap-1">
+            <div className="w-4 h-6 bg-green-600 rounded-l"></div>
+            <div className="w-4 h-6 bg-white border-y border-gray-300"></div>
+            <div className="w-4 h-6 bg-red-600 rounded-r"></div>
+          </div>
+        </div>
+      </header>
+
+      <section className="relative mx-auto max-w-6xl px-4 py-8">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-center mb-6 bg-gradient-to-r from-green-600 via-gray-800 to-red-600 bg-clip-text text-transparent">
           Best Football Betting Sites UK 2025
         </h1>
         <p className="text-center text-gray-600 max-w-4xl mx-auto text-lg mb-12 leading-relaxed">
@@ -304,8 +328,8 @@ export default function Home() {
                 
                 <div className="text-center">
                   <motion.div
-                    className="bg-gray-900 text-white px-4 py-2 rounded-lg font-semibold shadow-lg text-sm inline-block"
-                    whileHover={{ backgroundColor: h.color }}
+                    className="bg-gradient-to-r from-green-600 to-red-600 text-white px-4 py-2 rounded-lg font-semibold shadow-lg text-sm inline-block"
+                    whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
                     Claim Now →
@@ -326,8 +350,8 @@ export default function Home() {
               onClick={() => setActiveFilter(f)}
               className={`px-4 py-2 rounded-full border-2 font-medium transition-all duration-200 ${
                 activeFilter === f 
-                  ? "bg-gray-900 text-white border-gray-900 shadow-lg" 
-                  : "border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50"
+                  ? "bg-gradient-to-r from-green-600 to-red-600 text-white border-green-600 shadow-lg" 
+                  : "border-gray-300 text-gray-700 hover:border-green-500 hover:bg-green-50"
               }`}
             >
               {f}
@@ -364,7 +388,7 @@ export default function Home() {
                     href={s.cta_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-gray-900 to-gray-700 text-white px-8 py-4 font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-200"
+                    className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-green-600 to-red-600 text-white px-8 py-4 font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-200"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -391,13 +415,20 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="mt-20 border-t-2 border-gray-200 bg-gray-50">
+      <footer className="mt-20 border-t-2 border-gray-200 bg-gradient-to-r from-green-50 via-white to-red-50">
         <div className="mx-auto max-w-6xl px-4 py-12 flex flex-wrap gap-4 items-center justify-between">
-          <div className="text-gray-600 font-medium">© {new Date().getFullYear()} Luca Calcio AI - Edge Ahead Media Limited</div>
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1">
+              <div className="w-3 h-4 bg-green-600 rounded-l"></div>
+              <div className="w-3 h-4 bg-white border-y border-gray-300"></div>
+              <div className="w-3 h-4 bg-red-600 rounded-r"></div>
+            </div>
+            <div className="text-gray-600 font-medium">© {new Date().getFullYear()} Luca Calcio AI - Edge Ahead Media Limited</div>
+          </div>
           <div className="flex gap-4">
-            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-white font-medium transition-all" href="/terms">Terms & Conditions</a>
-            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-white font-medium transition-all" href="/privacy">Privacy Policy</a>
-            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-white font-medium transition-all" href="/cookies">Cookie Policy</a>
+            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-green-500 hover:bg-green-50 font-medium transition-all" href="/terms">Terms & Conditions</a>
+            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-green-500 hover:bg-green-50 font-medium transition-all" href="/privacy">Privacy Policy</a>
+            <a className="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 hover:border-green-500 hover:bg-green-50 font-medium transition-all" href="/cookies">Cookie Policy</a>
           </div>
         </div>
       </footer>
