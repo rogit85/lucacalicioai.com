@@ -173,14 +173,15 @@ export default function Home() {
     <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
       {/* Background: animated football elements with Italian colors */}
       <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
-        {/* Layer 1: Green-tinted footballs */}
+        {/* Green football */}
         <motion.div
-          className="absolute w-32 h-32 blur-sm"
+          className="absolute w-24 h-24 opacity-20"
           style={{ 
             backgroundImage: "url('/football.png')",
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
-            filter: "brightness(0) saturate(100%) invert(26%) sepia(89%) saturate(1583%) hue-rotate(118deg) brightness(96%) contrast(106%)",
+            backgroundColor: "rgb(34, 197, 94, 0.3)",
+            borderRadius: "50%",
             top: "10%",
             left: "5%"
           }}
@@ -192,14 +193,14 @@ export default function Home() {
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
         
-        {/* Layer 2: White footballs */}
+        {/* White football */}
         <motion.div
-          className="absolute w-24 h-24 blur-sm opacity-70"
+          className="absolute w-20 h-20 opacity-15"
           style={{ 
             backgroundImage: "url('/football.png')",
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
-            filter: "brightness(0) saturate(100%) invert(100%)",
+            filter: "blur(1px)",
             top: "25%",
             right: "10%"
           }}
@@ -211,14 +212,15 @@ export default function Home() {
           transition={{ duration: 25, repeat: Infinity, ease: "linear", delay: 2 }}
         />
         
-        {/* Layer 3: Red-tinted footballs */}
+        {/* Red football */}
         <motion.div
-          className="absolute w-36 h-36 blur-sm"
+          className="absolute w-32 h-32 opacity-20"
           style={{ 
             backgroundImage: "url('/football.png')",
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
-            filter: "brightness(0) saturate(100%) invert(21%) sepia(100%) saturate(7483%) hue-rotate(358deg) brightness(108%) contrast(117%)",
+            backgroundColor: "rgb(239, 68, 68, 0.3)",
+            borderRadius: "50%",
             bottom: "20%",
             left: "20%"
           }}
@@ -230,14 +232,16 @@ export default function Home() {
           transition={{ duration: 30, repeat: Infinity, ease: "linear", delay: 4 }}
         />
         
-        {/* Layer 4: Green football */}
+        {/* Green football 2 */}
         <motion.div
-          className="absolute w-28 h-28 blur-sm opacity-80"
+          className="absolute w-28 h-28 opacity-25"
           style={{ 
             backgroundImage: "url('/football.png')",
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
-            filter: "brightness(0) saturate(100%) invert(26%) sepia(89%) saturate(1583%) hue-rotate(118deg) brightness(96%) contrast(106%)",
+            backgroundColor: "rgb(34, 197, 94, 0.3)",
+            borderRadius: "50%",
+            filter: "blur(1px)",
             bottom: "10%",
             right: "15%"
           }}
@@ -249,14 +253,13 @@ export default function Home() {
           transition={{ duration: 22, repeat: Infinity, ease: "linear", delay: 6 }}
         />
         
-        {/* Layer 5: White football */}
+        {/* White football 2 */}
         <motion.div
-          className="absolute w-20 h-20 blur-sm opacity-60"
+          className="absolute w-20 h-20 opacity-15"
           style={{ 
             backgroundImage: "url('/football.png')",
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
-            filter: "brightness(0) saturate(100%) invert(100%)",
             top: "50%",
             left: "50%"
           }}
@@ -268,14 +271,16 @@ export default function Home() {
           transition={{ duration: 35, repeat: Infinity, ease: "linear", delay: 8 }}
         />
         
-        {/* Layer 6: Red football */}
+        {/* Red football 2 */}
         <motion.div
-          className="absolute w-32 h-32 blur-sm opacity-70"
+          className="absolute w-26 h-26 opacity-20"
           style={{ 
             backgroundImage: "url('/football.png')",
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
-            filter: "brightness(0) saturate(100%) invert(21%) sepia(100%) saturate(7483%) hue-rotate(358deg) brightness(108%) contrast(117%)",
+            backgroundColor: "rgb(239, 68, 68, 0.3)",
+            borderRadius: "50%",
+            filter: "blur(1px)",
             top: "70%",
             left: "40%"
           }}
@@ -285,6 +290,44 @@ export default function Home() {
             rotate: [0, -360]
           }}
           transition={{ duration: 28, repeat: Infinity, ease: "linear", delay: 10 }}
+        />
+        
+        {/* Additional footballs for better coverage */}
+        <motion.div
+          className="absolute w-36 h-36 opacity-15"
+          style={{ 
+            backgroundImage: "url('/football.png')",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            filter: "blur(2px)",
+            top: "5%",
+            right: "30%"
+          }}
+          animate={{ 
+            x: [0, -100, 0],
+            y: [0, 200, 0],
+            rotate: [0, -180]
+          }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear", delay: 12 }}
+        />
+        
+        <motion.div
+          className="absolute w-24 h-24 opacity-20"
+          style={{ 
+            backgroundImage: "url('/football.png')",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            backgroundColor: "rgb(34, 197, 94, 0.2)",
+            borderRadius: "50%",
+            bottom: "30%",
+            right: "40%"
+          }}
+          animate={{ 
+            x: [0, 80, 0],
+            y: [0, -120, 0],
+            rotate: [0, 360]
+          }}
+          transition={{ duration: 35, repeat: Infinity, ease: "linear", delay: 15 }}
         />
       </div>
 
