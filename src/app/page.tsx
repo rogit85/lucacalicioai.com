@@ -172,10 +172,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
       {/* Animated Football Background Elements */}
-      <div className="fixed inset-0 pointer-events-none opacity-15">
-        {/* Football 1 - Large */}
+      <div className="fixed inset-0 pointer-events-none opacity-20">
+        {/* Green Football */}
         <motion.div
-          className="absolute w-20 h-20"
+          className="absolute w-16 h-16"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -188,30 +188,18 @@ export default function Home() {
           }}
           style={{ top: "10%", left: "10%" }}
         >
-          <svg width="80" height="80" viewBox="0 0 100 100" className="w-full h-full">
-            {/* White base circle */}
-            <circle cx="50" cy="50" r="48" fill="white" stroke="#000" strokeWidth="2"/>
-            
-            {/* Classic football pentagon and hexagon pattern */}
-            {/* Center pentagon - black */}
-            <polygon points="50,25 60,35 55,50 45,50 40,35" fill="#000"/>
-            
-            {/* Surrounding hexagons - black */}
-            <polygon points="50,25 40,35 35,20 45,10 60,10 65,20" fill="#000"/>
-            <polygon points="60,35 75,35 80,50 70,65 55,50" fill="#000"/>
-            <polygon points="45,50 30,65 20,50 25,35 40,35" fill="#000"/>
-            <polygon points="55,50 70,65 65,80 50,85 35,80 30,65 45,50" fill="#000"/>
-            
-            {/* Italian flag colored accents */}
-            <circle cx="35" cy="25" r="3" fill="#16a34a"/>
-            <circle cx="50" cy="75" r="3" fill="white" stroke="#000"/>
-            <circle cx="65" cy="25" r="3" fill="#dc2626"/>
-          </svg>
+          <div className="w-full h-full rounded-full bg-green-600 border-4 border-white shadow-lg relative">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full"></div>
+            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full"></div>
+            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full"></div>
+            <div className="absolute top-1/2 left-2 transform -translate-y-1/2 w-2 h-2 bg-white rounded-full"></div>
+            <div className="absolute top-1/2 right-2 transform -translate-y-1/2 w-2 h-2 bg-white rounded-full"></div>
+          </div>
         </motion.div>
 
-        {/* Football 2 - Medium */}
+        {/* White Football */}
         <motion.div
-          className="absolute w-16 h-16"
+          className="absolute w-12 h-12"
           animate={{
             x: [0, -80, 0],
             y: [0, 60, 0],
@@ -225,19 +213,16 @@ export default function Home() {
           }}
           style={{ top: "30%", right: "15%" }}
         >
-          <svg width="64" height="64" viewBox="0 0 100 100" className="w-full h-full">
-            <circle cx="50" cy="50" r="48" fill="white" stroke="#000" strokeWidth="2"/>
-            <polygon points="50,30 58,38 54,50 46,50 42,38" fill="#000"/>
-            <polygon points="50,30 42,38 38,25 46,18 58,18 62,25" fill="#000"/>
-            <polygon points="58,38 70,38 74,50 66,62 54,50" fill="#000"/>
-            <polygon points="46,50 34,62 26,50 30,38 42,38" fill="#000"/>
-            <polygon points="54,50 66,62 62,75 50,78 38,75 34,62 46,50" fill="#000"/>
-            <circle cx="38" cy="30" r="2" fill="#16a34a"/>
-            <circle cx="62" cy="30" r="2" fill="#dc2626"/>
-          </svg>
+          <div className="w-full h-full rounded-full bg-white border-4 border-gray-800 shadow-lg relative">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-gray-800 rounded-full"></div>
+            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
+            <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
+            <div className="absolute top-1/2 left-1 transform -translate-y-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
+            <div className="absolute top-1/2 right-1 transform -translate-y-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
+          </div>
         </motion.div>
 
-        {/* Football 3 - Large Red accent */}
+        {/* Red Football */}
         <motion.div
           className="absolute w-18 h-18"
           animate={{
@@ -253,18 +238,16 @@ export default function Home() {
           }}
           style={{ bottom: "20%", left: "20%" }}
         >
-          <svg width="72" height="72" viewBox="0 0 100 100" className="w-full h-full">
-            <circle cx="50" cy="50" r="48" fill="white" stroke="#000" strokeWidth="2"/>
-            <polygon points="50,28 59,37 55,50 45,50 41,37" fill="#000"/>
-            <polygon points="50,28 41,37 37,23 45,15 59,15 63,23" fill="#000"/>
-            <polygon points="59,37 72,37 76,50 68,63 55,50" fill="#000"/>
-            <polygon points="45,50 32,63 24,50 28,37 41,37" fill="#000"/>
-            <polygon points="55,50 68,63 63,77 50,80 37,77 32,63 45,50" fill="#000"/>
-            <circle cx="50" cy="50" r="4" fill="#dc2626"/>
-          </svg>
+          <div className="w-full h-full rounded-full bg-red-600 border-4 border-white shadow-lg relative">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-white rounded-full"></div>
+            <div className="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full"></div>
+            <div className="absolute bottom-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full"></div>
+            <div className="absolute top-1/2 left-1.5 transform -translate-y-1/2 w-1.5 h-1.5 bg-white rounded-full"></div>
+            <div className="absolute top-1/2 right-1.5 transform -translate-y-1/2 w-1.5 h-1.5 bg-white rounded-full"></div>
+          </div>
         </motion.div>
 
-        {/* Football 4 - Small */}
+        {/* Green Football Small */}
         <motion.div
           className="absolute w-12 h-12"
           animate={{
@@ -280,17 +263,16 @@ export default function Home() {
           }}
           style={{ bottom: "40%", right: "25%" }}
         >
-          <svg width="48" height="48" viewBox="0 0 100 100" className="w-full h-full">
-            <circle cx="50" cy="50" r="48" fill="white" stroke="#000" strokeWidth="3"/>
-            <polygon points="50,32 57,39 54,50 46,50 43,39" fill="#000"/>
-            <polygon points="50,32 43,39 40,27 47,20 57,20 60,27" fill="#000"/>
-            <polygon points="57,39 68,39 71,50 65,61 54,50" fill="#000"/>
-            <polygon points="46,50 35,61 29,50 32,39 43,39" fill="#000"/>
-            <circle cx="40" cy="32" r="2" fill="#16a34a"/>
-          </svg>
+          <div className="w-full h-full rounded-full bg-green-600 border-4 border-white shadow-lg relative">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full"></div>
+            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
+            <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
+            <div className="absolute top-1/2 left-1 transform -translate-y-1/2 w-1 h-1 bg-white rounded-full"></div>
+            <div className="absolute top-1/2 right-1 transform -translate-y-1/2 w-1 h-1 bg-white rounded-full"></div>
+          </div>
         </motion.div>
 
-        {/* Football 5 - Medium Green accent */}
+        {/* White Football Medium */}
         <motion.div
           className="absolute w-14 h-14"
           animate={{
@@ -306,17 +288,16 @@ export default function Home() {
           }}
           style={{ top: "60%", left: "5%" }}
         >
-          <svg width="56" height="56" viewBox="0 0 100 100" className="w-full h-full">
-            <circle cx="50" cy="50" r="48" fill="white" stroke="#000" strokeWidth="2"/>
-            <polygon points="50,30 58,38 54,50 46,50 42,38" fill="#000"/>
-            <polygon points="50,30 42,38 38,25 46,18 58,18 62,25" fill="#000"/>
-            <polygon points="58,38 70,38 74,50 66,62 54,50" fill="#000"/>
-            <polygon points="46,50 34,62 26,50 30,38 42,38" fill="#000"/>
-            <circle cx="50" cy="50" r="3" fill="#16a34a"/>
-          </svg>
+          <div className="w-full h-full rounded-full bg-white border-4 border-gray-800 shadow-lg relative">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-gray-800 rounded-full"></div>
+            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
+            <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
+            <div className="absolute top-1/2 left-1 transform -translate-y-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
+            <div className="absolute top-1/2 right-1 transform -translate-y-1/2 w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
+          </div>
         </motion.div>
 
-        {/* Football 6 - Small */}
+        {/* Red Football Small */}
         <motion.div
           className="absolute w-10 h-10"
           animate={{
@@ -332,13 +313,13 @@ export default function Home() {
           }}
           style={{ top: "80%", right: "10%" }}
         >
-          <svg width="40" height="40" viewBox="0 0 100 100" className="w-full h-full">
-            <circle cx="50" cy="50" r="48" fill="white" stroke="#000" strokeWidth="3"/>
-            <polygon points="50,35 56,41 53,50 47,50 44,41" fill="#000"/>
-            <polygon points="50,35 44,41 41,30 47,25 56,25 59,30" fill="#000"/>
-            <polygon points="56,41 65,41 68,50 63,59 53,50" fill="#000"/>
-            <circle cx="60" cy="35" r="2" fill="#dc2626"/>
-          </svg>
+          <div className="w-full h-full rounded-full bg-red-600 border-4 border-white shadow-lg relative">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-white rounded-full"></div>
+            <div className="absolute top-0.5 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
+            <div className="absolute bottom-0.5 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
+            <div className="absolute top-1/2 left-0.5 transform -translate-y-1/2 w-1 h-1 bg-white rounded-full"></div>
+            <div className="absolute top-1/2 right-0.5 transform -translate-y-1/2 w-1 h-1 bg-white rounded-full"></div>
+          </div>
         </motion.div>
       </div>
 

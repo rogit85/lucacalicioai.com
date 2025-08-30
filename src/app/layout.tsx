@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     icon: "/Luca.jpeg",
     shortcut: "/Luca.jpeg",
     apple: "/Luca.jpeg",
+    other: {
+      rel: "icon",
+      url: "/Luca.jpeg",
+    },
   },
 };
 
