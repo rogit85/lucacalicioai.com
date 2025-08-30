@@ -171,164 +171,21 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
-      {/* Background: animated football elements with Italian colors */}
+      {/* Background: animated circles in Italian colors */}
       <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
-        {/* Green football */}
-        <motion.div
-          className="absolute w-24 h-24 opacity-20"
-          style={{ 
-            backgroundImage: "url('/football.png')",
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            backgroundColor: "rgb(34, 197, 94, 0.3)",
-            borderRadius: "50%",
-            top: "10%",
-            left: "5%"
-          }}
-          animate={{ 
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-            rotate: [0, 360]
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        />
+        {/* Green circles */}
+        <div className="absolute w-32 h-32 bg-green-500 rounded-full opacity-20 blur-xl animate-float-1" style={{ top: '10%', left: '5%' }} />
+        <div className="absolute w-24 h-24 bg-green-600 rounded-full opacity-15 blur-2xl animate-float-2" style={{ bottom: '20%', right: '10%' }} />
+        <div className="absolute w-40 h-40 bg-green-500 rounded-full opacity-10 blur-3xl animate-float-3" style={{ top: '50%', left: '60%' }} />
         
-        {/* White football */}
-        <motion.div
-          className="absolute w-20 h-20 opacity-15"
-          style={{ 
-            backgroundImage: "url('/football.png')",
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            filter: "blur(1px)",
-            top: "25%",
-            right: "10%"
-          }}
-          animate={{ 
-            x: [0, -150, 0],
-            y: [0, 80, 0],
-            rotate: [0, -360]
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear", delay: 2 }}
-        />
+        {/* White circles */}
+        <div className="absolute w-28 h-28 bg-gray-100 rounded-full opacity-20 blur-xl animate-float-4" style={{ top: '30%', right: '20%' }} />
+        <div className="absolute w-36 h-36 bg-white rounded-full opacity-15 blur-2xl animate-float-5" style={{ bottom: '40%', left: '30%' }} />
         
-        {/* Red football */}
-        <motion.div
-          className="absolute w-32 h-32 opacity-20"
-          style={{ 
-            backgroundImage: "url('/football.png')",
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            backgroundColor: "rgb(239, 68, 68, 0.3)",
-            borderRadius: "50%",
-            bottom: "20%",
-            left: "20%"
-          }}
-          animate={{ 
-            x: [0, 120, 0],
-            y: [0, -100, 0],
-            rotate: [0, 180]
-          }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear", delay: 4 }}
-        />
-        
-        {/* Green football 2 */}
-        <motion.div
-          className="absolute w-28 h-28 opacity-25"
-          style={{ 
-            backgroundImage: "url('/football.png')",
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            backgroundColor: "rgb(34, 197, 94, 0.3)",
-            borderRadius: "50%",
-            filter: "blur(1px)",
-            bottom: "10%",
-            right: "15%"
-          }}
-          animate={{ 
-            x: [0, -80, 0],
-            y: [0, -60, 0],
-            rotate: [0, -180]
-          }}
-          transition={{ duration: 22, repeat: Infinity, ease: "linear", delay: 6 }}
-        />
-        
-        {/* White football 2 */}
-        <motion.div
-          className="absolute w-20 h-20 opacity-15"
-          style={{ 
-            backgroundImage: "url('/football.png')",
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            top: "50%",
-            left: "50%"
-          }}
-          animate={{ 
-            x: [-100, 100, -100],
-            y: [-50, 50, -50],
-            rotate: [0, 360, 720]
-          }}
-          transition={{ duration: 35, repeat: Infinity, ease: "linear", delay: 8 }}
-        />
-        
-        {/* Red football 2 */}
-        <motion.div
-          className="absolute w-26 h-26 opacity-20"
-          style={{ 
-            backgroundImage: "url('/football.png')",
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            backgroundColor: "rgb(239, 68, 68, 0.3)",
-            borderRadius: "50%",
-            filter: "blur(1px)",
-            top: "70%",
-            left: "40%"
-          }}
-          animate={{ 
-            x: [0, 60, 0],
-            y: [0, -40, 0],
-            rotate: [0, -360]
-          }}
-          transition={{ duration: 28, repeat: Infinity, ease: "linear", delay: 10 }}
-        />
-        
-        {/* Additional footballs for better coverage */}
-        <motion.div
-          className="absolute w-36 h-36 opacity-15"
-          style={{ 
-            backgroundImage: "url('/football.png')",
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            filter: "blur(2px)",
-            top: "5%",
-            right: "30%"
-          }}
-          animate={{ 
-            x: [0, -100, 0],
-            y: [0, 200, 0],
-            rotate: [0, -180]
-          }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear", delay: 12 }}
-        />
-        
-        <motion.div
-          className="absolute w-24 h-24 opacity-20"
-          style={{ 
-            backgroundImage: "url('/football.png')",
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            backgroundColor: "rgb(34, 197, 94, 0.2)",
-            borderRadius: "50%",
-            bottom: "30%",
-            right: "40%"
-          }}
-          animate={{ 
-            x: [0, 80, 0],
-            y: [0, -120, 0],
-            rotate: [0, 360]
-          }}
-          transition={{ duration: 35, repeat: Infinity, ease: "linear", delay: 15 }}
-        />
+        {/* Red circles */}
+        <div className="absolute w-32 h-32 bg-red-500 rounded-full opacity-20 blur-xl animate-float-6" style={{ bottom: '10%', left: '10%' }} />
+        <div className="absolute w-28 h-28 bg-red-600 rounded-full opacity-15 blur-2xl animate-float-1" style={{ top: '60%', right: '40%' }} />
+        <div className="absolute w-44 h-44 bg-red-500 rounded-full opacity-10 blur-3xl animate-float-2" style={{ top: '20%', left: '40%' }} />
       </div>
 
       {/* Header with Logo */}

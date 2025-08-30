@@ -25,29 +25,96 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Animated football background helpers */
-@keyframes footballScroll {
-  0% { background-position: 0 0; }
-  100% { background-position: 800px 400px; }
+/* Animated floating circles */
+@keyframes float-1 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(100px, -50px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-50px, 50px) rotate(240deg);
+  }
 }
 
-@keyframes footballScrollReverse {
-  0% { background-position: 0 0; }
-  100% { background-position: -800px -400px; }
+@keyframes float-2 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(-80px, 40px) rotate(-120deg);
+  }
+  66% {
+    transform: translate(40px, -80px) rotate(-240deg);
+  }
 }
 
-.football-bg {
-  background-image: url('/football.png');
-  background-repeat: repeat;
-  background-size: 120px 120px;
-  animation: footballScroll 60s linear infinite;
-  opacity: 0.1;
+@keyframes float-3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(60px, -60px) scale(1.1);
+  }
 }
 
-.football-bg-reverse {
-  background-image: url('/football.png');
-  background-repeat: repeat;
-  background-size: 140px 140px;
-  animation: footballScrollReverse 90s linear infinite;
-  opacity: 0.06;
+@keyframes float-4 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-40px, -40px) rotate(90deg);
+  }
+  50% {
+    transform: translate(-40px, 40px) rotate(180deg);
+  }
+  75% {
+    transform: translate(40px, 40px) rotate(270deg);
+  }
+}
+
+@keyframes float-5 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(100px, 0);
+  }
+}
+
+@keyframes float-6 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-50px, -50px) scale(0.9);
+  }
+  66% {
+    transform: translate(50px, -50px) scale(1.1);
+  }
+}
+
+.animate-float-1 {
+  animation: float-1 20s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-2 25s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float-3 30s ease-in-out infinite;
+}
+
+.animate-float-4 {
+  animation: float-4 22s ease-in-out infinite;
+}
+
+.animate-float-5 {
+  animation: float-5 18s ease-in-out infinite;
+}
+
+.animate-float-6 {
+  animation: float-6 28s ease-in-out infinite;
 }
