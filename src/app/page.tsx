@@ -172,10 +172,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
       {/* Animated Football Background Elements */}
-      <div className="fixed inset-0 pointer-events-none opacity-20">
-        {/* Football 1 - Green */}
+      <div className="fixed inset-0 pointer-events-none opacity-15">
+        {/* Football 1 - Large */}
         <motion.div
-          className="absolute w-16 h-16"
+          className="absolute w-20 h-20"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -188,21 +188,30 @@ export default function Home() {
           }}
           style={{ top: "10%", left: "10%" }}
         >
-          <svg width="64" height="64" viewBox="0 0 64 64" className="w-full h-full">
-            <circle cx="32" cy="32" r="30" fill="white" stroke="#16a34a" strokeWidth="3"/>
-            {/* Football panel lines */}
-            <path d="M8 32 Q32 8 56 32" stroke="#16a34a" strokeWidth="2" fill="none"/>
-            <path d="M32 8 Q56 32 32 56" stroke="#16a34a" strokeWidth="2" fill="none"/>
-            <path d="M56 32 Q32 56 8 32" stroke="#16a34a" strokeWidth="2" fill="none"/>
-            <path d="M8 32 Q32 56 56 32" stroke="#16a34a" strokeWidth="2" fill="none"/>
-            <path d="M32 8 Q8 32 32 56" stroke="#16a34a" strokeWidth="2" fill="none"/>
-            <circle cx="32" cy="32" r="8" fill="#16a34a"/>
+          <svg width="80" height="80" viewBox="0 0 100 100" className="w-full h-full">
+            {/* White base circle */}
+            <circle cx="50" cy="50" r="48" fill="white" stroke="#000" strokeWidth="2"/>
+            
+            {/* Classic football pentagon and hexagon pattern */}
+            {/* Center pentagon - black */}
+            <polygon points="50,25 60,35 55,50 45,50 40,35" fill="#000"/>
+            
+            {/* Surrounding hexagons - black */}
+            <polygon points="50,25 40,35 35,20 45,10 60,10 65,20" fill="#000"/>
+            <polygon points="60,35 75,35 80,50 70,65 55,50" fill="#000"/>
+            <polygon points="45,50 30,65 20,50 25,35 40,35" fill="#000"/>
+            <polygon points="55,50 70,65 65,80 50,85 35,80 30,65 45,50" fill="#000"/>
+            
+            {/* Italian flag colored accents */}
+            <circle cx="35" cy="25" r="3" fill="#16a34a"/>
+            <circle cx="50" cy="75" r="3" fill="white" stroke="#000"/>
+            <circle cx="65" cy="25" r="3" fill="#dc2626"/>
           </svg>
         </motion.div>
 
-        {/* Football 2 - White */}
+        {/* Football 2 - Medium */}
         <motion.div
-          className="absolute w-12 h-12"
+          className="absolute w-16 h-16"
           animate={{
             x: [0, -80, 0],
             y: [0, 60, 0],
@@ -216,20 +225,21 @@ export default function Home() {
           }}
           style={{ top: "30%", right: "15%" }}
         >
-          <svg width="48" height="48" viewBox="0 0 48 48" className="w-full h-full">
-            <circle cx="24" cy="24" r="22" fill="white" stroke="#374151" strokeWidth="3"/>
-            <path d="M6 24 Q24 6 42 24" stroke="#374151" strokeWidth="2" fill="none"/>
-            <path d="M24 6 Q42 24 24 42" stroke="#374151" strokeWidth="2" fill="none"/>
-            <path d="M42 24 Q24 42 6 24" stroke="#374151" strokeWidth="2" fill="none"/>
-            <path d="M6 24 Q24 42 42 24" stroke="#374151" strokeWidth="2" fill="none"/>
-            <path d="M24 6 Q6 24 24 42" stroke="#374151" strokeWidth="2" fill="none"/>
-            <circle cx="24" cy="24" r="6" fill="#374151"/>
+          <svg width="64" height="64" viewBox="0 0 100 100" className="w-full h-full">
+            <circle cx="50" cy="50" r="48" fill="white" stroke="#000" strokeWidth="2"/>
+            <polygon points="50,30 58,38 54,50 46,50 42,38" fill="#000"/>
+            <polygon points="50,30 42,38 38,25 46,18 58,18 62,25" fill="#000"/>
+            <polygon points="58,38 70,38 74,50 66,62 54,50" fill="#000"/>
+            <polygon points="46,50 34,62 26,50 30,38 42,38" fill="#000"/>
+            <polygon points="54,50 66,62 62,75 50,78 38,75 34,62 46,50" fill="#000"/>
+            <circle cx="38" cy="30" r="2" fill="#16a34a"/>
+            <circle cx="62" cy="30" r="2" fill="#dc2626"/>
           </svg>
         </motion.div>
 
-        {/* Football 3 - Red */}
+        {/* Football 3 - Large Red accent */}
         <motion.div
-          className="absolute w-20 h-20"
+          className="absolute w-18 h-18"
           animate={{
             x: [0, 120, 0],
             y: [0, -80, 0],
@@ -243,20 +253,20 @@ export default function Home() {
           }}
           style={{ bottom: "20%", left: "20%" }}
         >
-          <svg width="80" height="80" viewBox="0 0 80 80" className="w-full h-full">
-            <circle cx="40" cy="40" r="38" fill="white" stroke="#dc2626" strokeWidth="3"/>
-            <path d="M10 40 Q40 10 70 40" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <path d="M40 10 Q70 40 40 70" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <path d="M70 40 Q40 70 10 40" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <path d="M10 40 Q40 70 70 40" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <path d="M40 10 Q10 40 40 70" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <circle cx="40" cy="40" r="10" fill="#dc2626"/>
+          <svg width="72" height="72" viewBox="0 0 100 100" className="w-full h-full">
+            <circle cx="50" cy="50" r="48" fill="white" stroke="#000" strokeWidth="2"/>
+            <polygon points="50,28 59,37 55,50 45,50 41,37" fill="#000"/>
+            <polygon points="50,28 41,37 37,23 45,15 59,15 63,23" fill="#000"/>
+            <polygon points="59,37 72,37 76,50 68,63 55,50" fill="#000"/>
+            <polygon points="45,50 32,63 24,50 28,37 41,37" fill="#000"/>
+            <polygon points="55,50 68,63 63,77 50,80 37,77 32,63 45,50" fill="#000"/>
+            <circle cx="50" cy="50" r="4" fill="#dc2626"/>
           </svg>
         </motion.div>
 
-        {/* Football 4 - Green Medium */}
+        {/* Football 4 - Small */}
         <motion.div
-          className="absolute w-14 h-14"
+          className="absolute w-12 h-12"
           animate={{
             x: [0, -90, 0],
             y: [0, 70, 0],
@@ -270,20 +280,19 @@ export default function Home() {
           }}
           style={{ bottom: "40%", right: "25%" }}
         >
-          <svg width="56" height="56" viewBox="0 0 56 56" className="w-full h-full">
-            <circle cx="28" cy="28" r="26" fill="white" stroke="#16a34a" strokeWidth="3"/>
-            <path d="M7 28 Q28 7 49 28" stroke="#16a34a" strokeWidth="2" fill="none"/>
-            <path d="M28 7 Q49 28 28 49" stroke="#16a34a" strokeWidth="2" fill="none"/>
-            <path d="M49 28 Q28 49 7 28" stroke="#16a34a" strokeWidth="2" fill="none"/>
-            <path d="M7 28 Q28 49 49 28" stroke="#16a34a" strokeWidth="2" fill="none"/>
-            <path d="M28 7 Q7 28 28 49" stroke="#16a34a" strokeWidth="2" fill="none"/>
-            <circle cx="28" cy="28" r="7" fill="#16a34a"/>
+          <svg width="48" height="48" viewBox="0 0 100 100" className="w-full h-full">
+            <circle cx="50" cy="50" r="48" fill="white" stroke="#000" strokeWidth="3"/>
+            <polygon points="50,32 57,39 54,50 46,50 43,39" fill="#000"/>
+            <polygon points="50,32 43,39 40,27 47,20 57,20 60,27" fill="#000"/>
+            <polygon points="57,39 68,39 71,50 65,61 54,50" fill="#000"/>
+            <polygon points="46,50 35,61 29,50 32,39 43,39" fill="#000"/>
+            <circle cx="40" cy="32" r="2" fill="#16a34a"/>
           </svg>
         </motion.div>
 
-        {/* Football 5 - White Medium */}
+        {/* Football 5 - Medium Green accent */}
         <motion.div
-          className="absolute w-16 h-16"
+          className="absolute w-14 h-14"
           animate={{
             x: [0, -110, 0],
             y: [0, -90, 0],
@@ -297,18 +306,17 @@ export default function Home() {
           }}
           style={{ top: "60%", left: "5%" }}
         >
-          <svg width="64" height="64" viewBox="0 0 64 64" className="w-full h-full">
-            <circle cx="32" cy="32" r="30" fill="white" stroke="#374151" strokeWidth="3"/>
-            <path d="M8 32 Q32 8 56 32" stroke="#374151" strokeWidth="2" fill="none"/>
-            <path d="M32 8 Q56 32 32 56" stroke="#374151" strokeWidth="2" fill="none"/>
-            <path d="M56 32 Q32 56 8 32" stroke="#374151" strokeWidth="2" fill="none"/>
-            <path d="M8 32 Q32 56 56 32" stroke="#374151" strokeWidth="2" fill="none"/>
-            <path d="M32 8 Q8 32 32 56" stroke="#374151" strokeWidth="2" fill="none"/>
-            <circle cx="32" cy="32" r="8" fill="#374151"/>
+          <svg width="56" height="56" viewBox="0 0 100 100" className="w-full h-full">
+            <circle cx="50" cy="50" r="48" fill="white" stroke="#000" strokeWidth="2"/>
+            <polygon points="50,30 58,38 54,50 46,50 42,38" fill="#000"/>
+            <polygon points="50,30 42,38 38,25 46,18 58,18 62,25" fill="#000"/>
+            <polygon points="58,38 70,38 74,50 66,62 54,50" fill="#000"/>
+            <polygon points="46,50 34,62 26,50 30,38 42,38" fill="#000"/>
+            <circle cx="50" cy="50" r="3" fill="#16a34a"/>
           </svg>
         </motion.div>
 
-        {/* Football 6 - Red Small */}
+        {/* Football 6 - Small */}
         <motion.div
           className="absolute w-10 h-10"
           animate={{
@@ -324,14 +332,12 @@ export default function Home() {
           }}
           style={{ top: "80%", right: "10%" }}
         >
-          <svg width="40" height="40" viewBox="0 0 40 40" className="w-full h-full">
-            <circle cx="20" cy="20" r="18" fill="white" stroke="#dc2626" strokeWidth="3"/>
-            <path d="M5 20 Q20 5 35 20" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <path d="M20 5 Q35 20 20 35" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <path d="M35 20 Q20 35 5 20" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <path d="M5 20 Q20 35 35 20" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <path d="M20 5 Q5 20 20 35" stroke="#dc2626" strokeWidth="2" fill="none"/>
-            <circle cx="20" cy="20" r="5" fill="#dc2626"/>
+          <svg width="40" height="40" viewBox="0 0 100 100" className="w-full h-full">
+            <circle cx="50" cy="50" r="48" fill="white" stroke="#000" strokeWidth="3"/>
+            <polygon points="50,35 56,41 53,50 47,50 44,41" fill="#000"/>
+            <polygon points="50,35 44,41 41,30 47,25 56,25 59,30" fill="#000"/>
+            <polygon points="56,41 65,41 68,50 63,59 53,50" fill="#000"/>
+            <circle cx="60" cy="35" r="2" fill="#dc2626"/>
           </svg>
         </motion.div>
       </div>
