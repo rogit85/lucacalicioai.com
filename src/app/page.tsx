@@ -171,21 +171,21 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-gray-900 relative overflow-hidden">
-      {/* Background: animated circles in Italian colors */}
-      <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
-        {/* Green circles */}
-        <div className="absolute w-32 h-32 bg-green-500 rounded-full opacity-20 blur-xl animate-float-1" style={{ top: '10%', left: '5%' }} />
-        <div className="absolute w-24 h-24 bg-green-600 rounded-full opacity-15 blur-2xl animate-float-2" style={{ bottom: '20%', right: '10%' }} />
-        <div className="absolute w-40 h-40 bg-green-500 rounded-full opacity-10 blur-3xl animate-float-3" style={{ top: '50%', left: '60%' }} />
+      {/* Background: SIMPLE ANIMATIONS WITH TAILWIND */}
+      <div className="fixed inset-0 -z-10 pointer-events-none">
+        {/* Big red spinning circle */}
+        <div className="absolute w-32 h-32 bg-red-500 rounded-full opacity-30 animate-spin" style={{ top: '20%', left: '10%' }} />
         
-        {/* White circles */}
-        <div className="absolute w-28 h-28 bg-gray-100 rounded-full opacity-20 blur-xl animate-float-4" style={{ top: '30%', right: '20%' }} />
-        <div className="absolute w-36 h-36 bg-white rounded-full opacity-15 blur-2xl animate-float-5" style={{ bottom: '40%', left: '30%' }} />
+        {/* Green bouncing circle */}
+        <div className="absolute w-24 h-24 bg-green-500 rounded-full opacity-40 animate-bounce" style={{ top: '50%', right: '20%' }} />
         
-        {/* Red circles */}
-        <div className="absolute w-32 h-32 bg-red-500 rounded-full opacity-20 blur-xl animate-float-6" style={{ bottom: '10%', left: '10%' }} />
-        <div className="absolute w-28 h-28 bg-red-600 rounded-full opacity-15 blur-2xl animate-float-1" style={{ top: '60%', right: '40%' }} />
-        <div className="absolute w-44 h-44 bg-red-500 rounded-full opacity-10 blur-3xl animate-float-2" style={{ top: '20%', left: '40%' }} />
+        {/* White pulsing circle */}
+        <div className="absolute w-40 h-40 bg-gray-300 rounded-full opacity-30 animate-pulse" style={{ bottom: '20%', left: '40%' }} />
+        
+        {/* Extra visible test - a big red square that definitely moves */}
+        <div className="absolute w-20 h-20 bg-red-600 animate-bounce" style={{ top: '10px', left: '50%' }}>
+          MOVING
+        </div>
       </div>
 
       {/* Header with Logo */}
